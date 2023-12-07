@@ -90,7 +90,7 @@ A feladatok megoldása során ne felejtsd el követni a feladat beadás folyamat
     !!! warning "NPM cache"
         Fontos! A laborgépeken nem vagy nem mindig érhető el megfelelően az NPM lokális cache példánya, ezért használjuk helyette itt az `npm install --cache .cache` parancsot, ami az aktuális mappában egy `.cache` nevű mappát használ a központi gyorsítótár helyett. Lokális gépen is használhatjuk ezt a parancsot, de ott elegendő (kell, hogy legyen) az `npm install` is.
 
-        **Ez a `.cache` mappa NE KERÜLJÖN commuttolásra!**
+        **Ez a `.cache` mappa NE KERÜLJÖN commitolásra!**
 
 7. Próbáljuk ki az alkalmazást böngészőben!
 
@@ -124,9 +124,9 @@ A webpack konfigurációja a `webpack.config.js` fájlban található, amelyben 
 
 ## Feladat 2 - Modern JavaScript funkciók
 
-A megoldás során használjuk az objektumorientált megközelítést és a modern JS funkciókat! Igyekezzünk komponens-orientáltan gondolkodni: **egy objektum komponens, ha megjelenik a felületen a reprezentációja**, képes kommunikálni más objektumokkal és komponensekkel, ezen felül lehet állapota (mezői, tulajdonságai, amiket karban tart).
+A megoldás során használjuk az objektumorientált megközelítést és a modern JS funkciókat! Igyekezzünk komponens-orientáltan gondolkodni: **egy objektum komponens, ha megjelenik a felületen a reprezentációja**, képes kommunikálni más objektumokkal és komponensekkel, ezen felül lehet állapota (mezői, tulajdonságai, amiket karbantart).
 
-Az alkalmazásunknak szüksége lesz egy "gépre", aki majd kigondolja a számot. Az egyszerűség kedvéért most ez egy 1 és 100 közötti szám lesz, az érték nem konfigurálható. Szimuláljuk, hogy a "számítás" komplex, úgyhogy kis késleltetést viszünk majd abba, amíg a választ visszakapjuk a tippünkre.
+Az alkalmazásunknak szüksége lesz egy "gépre", ami majd kigondolja a számot. Az egyszerűség kedvéért most ez egy 1 és 100 közötti szám lesz, az érték nem konfigurálható. Szimuláljuk, hogy a "számítás" komplex, úgyhogy kis késleltetést viszünk majd abba, amíg a választ visszakapjuk a tippünkre.
 
 Az objektumaink, melyek a felületen is megjelennek, rendelkezni fognak egy `render()` függvénnyel, és lesz egy (az alkalmazás szempontjából) globális `render()` függvényünk is, ami minden komponenst kirajzol azok `render()` függvényének meghívásával.
 
@@ -336,7 +336,7 @@ export class Guess {
             element.disabled = !this.enabled;
         }
 
-        if (!this.enabled) {
+        if (this.enabled) {
             document.getElementById('guess-input').focus();
         }
     }
